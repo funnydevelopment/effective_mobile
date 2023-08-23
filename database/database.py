@@ -1,17 +1,21 @@
 import json
-import config
+
+from config import config
+from text_messages import text_messages as texts
 
 
-file_name = "data.json"
+file_name = "database/data.json"
 data = config.load_data(file_name)
 
 
 def get_all_data():
+    print(texts.GET_ALL_DATA_TEXT)
     for row in data:
         print(json.dumps(row, indent=4))
 
 
 def save_data():
+    print(texts.SAVE_DATA_TEXT_1)
     try:
         new_person = {}
         last_name = input("Введите фамилию: ")
@@ -29,6 +33,6 @@ def save_data():
         data.append(new_person)
         with open(file_name, "w") as file:
             json.dump(data, file, indent=4)
-        print("Новый пользователь добавлен в справочник.")
+        print(texts.SAVE_DATA_TEXT_2)
     except Exception:
-        print(f"Произошла ошибка при добавлении пользователя")
+        print(texts.SAVE_DATA_TEXT_3)

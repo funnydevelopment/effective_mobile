@@ -22,5 +22,13 @@
         "organization_name": "Leeds Ltd.",
         "work_phone": "8 (123) 456-7890",
         "personal_phone": "8 (987) 654-3210"
+    },
+    {
+        "last_name": "Jordan",
+        "first_name": "Holloway",
+        "middle_name": "Winston",
+        "organization_name": "Winston Ltd.",
+        "work_phone": "8 (123) 456-7890",
+        "personal_phone": "8 (987) 654-3210"
     }
 ]
