@@ -30,5 +30,13 @@
         "organization_name": "Winston Ltd.",
         "work_phone": "8 (123) 456-7890",
         "personal_phone": "8 (987) 654-3210"
+    },
+    {
+        "last_name": "Taylor",
+        "first_name": "Greenwood",
+        "middle_name": "Paul",
+        "organization_name": "DHL Ltd.",
+        "work_phone": "8 (123) 456-7877",
+        "personal_phone": "8 (987) 524-7541"
     }
 ]

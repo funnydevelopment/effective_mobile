@@ -36,3 +36,7 @@ def save_data():
         print(texts.SAVE_DATA_TEXT_2)
     except Exception:
         print(texts.SAVE_DATA_TEXT_3)
+
+
+def get_persons_count():
+    print(f"\nОбщее количество записей в справочнике: {len(data)}\n")
