@@ -1,0 +1,26 @@
+[
+    {
+        "last_name": "Smith",
+        "first_name": "John",
+        "middle_name": "Michael",
+        "organization_name": "Example Ltd.",
+        "work_phone": "8 (123) 456-7890",
+        "personal_phone": "8 (987) 654-3210"
+    },
+    {
+        "last_name": "Johnson",
+        "first_name": "Emily",
+        "middle_name": "Jane",
+        "organization_name": "Johnson Enterprises",
+        "work_phone": "8 (111) 222-3333",
+        "personal_phone": "8 (999) 888-7777"
+    },
+    {
+        "last_name": "Sean",
+        "first_name": "Thomas",
+        "middle_name": "George",
+        "organization_name": "Leeds Ltd.",
+        "work_phone": "8 (123) 456-7890",
+        "personal_phone": "8 (987) 654-3210"
+    }
+]
