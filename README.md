@@ -16,3 +16,25 @@
 3. Подробно описанный функционал программы
 4. Размещение готовой программы и примера файла с данными на github
 ---
+### Данные будут храниться в JSON формате
+#### Пример:
+```json
+[
+    {
+        "last_name": "Name_1",
+        "first_name": "Surname_1",
+        "middle_name": "Middle_name_1",
+        "organization_name": "Example_Ltd_1",
+        "work_phone": "8 (123) 123-0000",
+        "personal_phone": "8 (123) 000-0000"
+    },
+    {
+        "last_name": "Name_2",
+        "first_name": "Surname_2",
+        "middle_name": "Middle_name_2",
+        "organization_name": "Example_Ltd_2",
+        "work_phone": "8 (123) 123-0001",
+        "personal_phone": "8 (123) 000-0001"
+    }
+]
+```

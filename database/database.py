@@ -8,13 +8,13 @@ file_name = "database/data.json"
 data = config.load_data(file_name)
 
 
-def get_all_data():
+def get_all_data() -> None:
     print(texts.GET_ALL_DATA_TEXT)
     for row in data:
         print(json.dumps(row, indent=4))
 
 
-def save_data():
+def save_data() -> None:
     print(texts.SAVE_DATA_TEXT_1)
     try:
         new_person = {}
@@ -38,5 +38,5 @@ def save_data():
         print(texts.SAVE_DATA_TEXT_3)
 
 
-def get_persons_count():
+def get_persons_count() -> None:
     print(f"\nОбщее количество записей в справочнике: {len(data)}\n")
