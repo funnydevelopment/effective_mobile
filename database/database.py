@@ -41,12 +41,18 @@ def update_data(last_name_to_update: str, updated_fields: dict) -> None:
             return
 
 
-def search_data(key: str, value: str):
-    print(texts.JSON_DATA_TEXT)
-    for entry in data:
-        if entry[key] == value:
-            print(entry)
+def search_data(search_data: str | list):
+    if len(search_data) == 1:
+        for entry in data:
+            for key, value in entry.items():
+                if search_data[0] in value.lower():
+                    print(json.dumps(entry, indent=4))
+                    return
+            print(texts.NO_USER_TEXT)
+            return
+    else:
+        print("Too many arguments")
 
 
-def get_persons_count() -> None:
+def get_count_of_users() -> None:
     print(texts.TOTAL_USERS_TEXT.format(count=len(data)))

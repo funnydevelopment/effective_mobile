@@ -11,13 +11,13 @@ def user_choice() -> str:
     return input("\nВыберите действие: ")
 
 
-def get_valid_input(prompt, validation_func):
+def get_valid_input(prompt, validation_func) -> str:
     while True:
         user_input = input(prompt)
         if validation_func(user_input):
             return user_input
         else:
-            print("Некорректный ввод. Попробуйте ещё раз.")
+            print(texts.WRONG_INPUT_TEXT_2)
 
 
 def user_input_alpha(input_word: str) -> str | bool:
@@ -32,20 +32,12 @@ def user_input_digit(input_word: str) -> str | bool:
     return False
 
 
-def user_full_name() -> str:
-    part_of_name = input()
-    if part_of_name.isalpha():
-        return part_of_name
-    else:
-        raise TypeError
-
-
 def goodbye_user() -> bool:
     print(texts.GOODBYE_TEXT)
     return False
 
 
-def save_user():
+def save_user() -> None:
     print(texts.SAVE_DATA_TEXT_1)
     print(texts.JSON_DATA_TEXT)
     new_person = dict()
@@ -68,7 +60,7 @@ def save_user():
     database.save_data(new_person)
 
 
-def update_user():
+def update_user() -> None:
     last_name_check = get_valid_input(
         "\nВведите фамилию для обновления: ", user_input_alpha
     )
@@ -94,7 +86,7 @@ def update_user():
         print(texts.NO_USER_TEXT)
 
 
-def search_user():
-    key_to_search = input("Введите ключ для поиска: ")
-    value_to_search = user_full_name()
-    database.search_data(key_to_search, value_to_search)
+def search_user() -> None:
+    print(texts.JSON_DATA_TEXT)
+    list_to_search = input(texts.SEARCH_INPUT_TEXT).split()
+    database.search_data(list_to_search)

@@ -18,7 +18,7 @@ def main():
             case "4":
                 views.search_user()
             case "5":
-                database.get_persons_count()
+                database.get_count_of_users()
             case "6":
                 return views.goodbye_user()
             case _:
