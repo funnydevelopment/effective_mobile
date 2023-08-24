@@ -21,13 +21,13 @@ def get_valid_input(prompt, validation_func):
 
 
 def user_input_alpha(input_word: str) -> str | bool:
-    if input_word.isalpha():
+    if input_word.isalpha() and len(input_word) > 3:
         return input_word
     return False
 
 
 def user_input_digit(input_word: str) -> str | bool:
-    if input_word.isdigit():
+    if input_word.isdigit() and len(input_word) == 11:
         return input_word
     return False
 
@@ -44,6 +44,28 @@ def user_goodbye() -> bool:
     print(texts.GOODBYE_TEXT)
     return False
 
+
+def save_user_data():
+    print(texts.SAVE_DATA_TEXT_1)
+    print(texts.JSON_DATA_TEXT)
+    new_person = dict()
+    new_person["last_name"] = get_valid_input(
+        "Введите фамилию нового пользователя: ", user_input_alpha
+    )
+    new_person["first_name"] = get_valid_input(
+        "Введите имя нового пользователя: ", user_input_alpha
+    )
+    new_person["middle_name"] = get_valid_input(
+        "Введите отчество нового пользователя: ", user_input_alpha
+    )
+    new_person["organization_name"] = input("Введите новое название организации: ")
+    new_person["work_phone"] = get_valid_input(
+        "Введите рабочий телефон: ", user_input_digit
+    )
+    new_person["personal_phone"] = get_valid_input(
+        "Введите личный телефон: ", user_input_digit
+    )
+    database.save_data(new_person)
 
 def update_user_data():
     last_name_check = get_valid_input(

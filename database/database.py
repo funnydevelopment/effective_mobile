@@ -14,23 +14,9 @@ def get_all_data() -> None:
         print(json.dumps(row, indent=4))
 
 
-def save_data() -> None:
-    print(texts.SAVE_DATA_TEXT_1)
-    print(texts.JSON_DATA_TEXT)
+def save_data(user_data: dict) -> None:
     try:
-        new_person = {}
-        fields = [
-            "last_name",
-            "first_name",
-            "middle_name",
-            "organization_name",
-            "work_phone",
-            "personal_phone",
-        ]
-        for field in fields:
-            value = input(f"Введите {field.replace('_', ' ')}: ")
-            new_person[field] = value
-        data.append(new_person)
+        data.append(user_data)
         with open(file_name, "w") as file:
             json.dump(data, file, indent=4)
         print(texts.SAVE_DATA_TEXT_2)

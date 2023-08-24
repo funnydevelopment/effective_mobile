@@ -12,7 +12,7 @@ def main():
             case "1":
                 database.get_all_data()
             case "2":
-                database.save_data()
+                views.save_user_data()
             case "3":
                 views.update_user_data()
             case "4":
