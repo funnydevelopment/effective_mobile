@@ -22,11 +22,25 @@ CHOICE_TEXT = """
 
 GET_ALL_DATA_TEXT = "\n\nСписок всех пользователей:\n\n"
 
+JSON_DATA_TEXT = """
+Есть следующие ключи со значениями
+last_name: Фамилия
+first_name: Имя
+middle_name: Отчество
+organization_name: Название организация
+work_phone: Номер телефона организации
+personal_phone: Личный номер телефона
+"""
+
 SAVE_DATA_TEXT_1 = "\nВы начали процесс добавления нового пользователя!\n"
 
 SAVE_DATA_TEXT_2 = "\nНовый пользователь добавлен в справочник.\n"
 
 SAVE_DATA_TEXT_3 = "\nПроизошла ошибка при добавлении пользователя!\n"
+
+UPDATE_DATA_TEXT = "Введите ключ"
+
+NO_USER_TEXT = "\nЗапись с заданным ключом не найдена.\n"
 
 GOODBYE_TEXT = "\nДо скорой встречи!\n"
 

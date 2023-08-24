@@ -14,14 +14,15 @@ def main():
             case "2":
                 database.save_data()
             case "3":
-                pass
+                views.update_user_data()
             case "4":
-                pass
+                key_to_search = input("Введите ключ для поиска: ")
+                value_to_search = views.user_full_name()
+                database.search_data(key_to_search, value_to_search)
             case "5":
                 database.get_persons_count()
             case "6":
-                views.user_goodbye()
-                break
+                return views.user_goodbye()
             case _:
                 print(texts.WRONG_INPUT_TEXT)
 

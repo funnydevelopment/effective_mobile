@@ -16,26 +16,50 @@ def get_all_data() -> None:
 
 def save_data() -> None:
     print(texts.SAVE_DATA_TEXT_1)
+    print(texts.JSON_DATA_TEXT)
     try:
         new_person = {}
-        last_name = input("Введите фамилию: ")
-        new_person["last_name"] = last_name
-        first_name = input("Введите имя: ")
-        new_person["first_name"] = first_name
-        middle_name = input("Введите отчество: ")
-        new_person["middle_name"] = middle_name
-        organization_name = input("Введите название организации: ")
-        new_person["organization_name"] = organization_name
-        work_phone = input("Введите телефон рабочий: ")
-        new_person["work_phone"] = work_phone
-        personal_phone = input("Введите телефон личный (сотовый): ")
-        new_person["personal_phone"] = personal_phone
+        fields = [
+            "last_name",
+            "first_name",
+            "middle_name",
+            "organization_name",
+            "work_phone",
+            "personal_phone",
+        ]
+        for field in fields:
+            value = input(f"Введите {field.replace('_', ' ')}: ")
+            new_person[field] = value
         data.append(new_person)
         with open(file_name, "w") as file:
             json.dump(data, file, indent=4)
         print(texts.SAVE_DATA_TEXT_2)
     except Exception:
         print(texts.SAVE_DATA_TEXT_3)
+
+
+def if_user_exist(last_name: str) -> bool:
+    for entry in data:
+        if entry["last_name"] == last_name:
+            return True
+    return False
+
+
+def update_data(last_name_to_update: str, updated_fields: dict):
+    for entry in data:
+        if entry["last_name"] == last_name_to_update:
+            entry.update(updated_fields)
+            with open(file_name, "w") as file:
+                json.dump(data, file, indent=4)
+            print("Запись успешно обновлена.")
+            return
+
+
+def search_data(key: str, value: str):
+    print(texts.JSON_DATA_TEXT)
+    for entry in data:
+        if entry[key] == value:
+            print(entry)
 
 
 def get_persons_count() -> None:
