@@ -11,6 +11,15 @@ def user_choice() -> str:
     return input("\nВыберите действие: ")
 
 
+def get_valid_input(prompt, validation_func):
+    while True:
+        user_input = input(prompt)
+        if validation_func(user_input):
+            return user_input
+        else:
+            print("Некорректный ввод. Попробуйте ещё раз.")
+
+
 def user_input_alpha(input_word: str) -> str | bool:
     if input_word.isalpha():
         return input_word
@@ -37,16 +46,8 @@ def user_goodbye() -> bool:
 
 
 def update_user_data():
-    def get_valid_input(prompt, validation_func):
-        while True:
-            user_input = input(prompt)
-            if validation_func(user_input):
-                return user_input
-            else:
-                print("Некорректный ввод. Попробуйте ещё раз.")
-
     last_name_check = get_valid_input(
-        "Введите фамилию для обновления: ", user_input_alpha
+        "\nВведите фамилию для обновления: ", user_input_alpha
     )
     last_name_exists = database.if_user_exist(last_name_check)
 

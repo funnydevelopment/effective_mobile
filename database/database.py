@@ -45,13 +45,13 @@ def if_user_exist(last_name: str) -> bool:
     return False
 
 
-def update_data(last_name_to_update: str, updated_fields: dict):
+def update_data(last_name_to_update: str, updated_fields: dict) -> None:
     for entry in data:
         if entry["last_name"] == last_name_to_update:
             entry.update(updated_fields)
             with open(file_name, "w") as file:
                 json.dump(data, file, indent=4)
-            print("Запись успешно обновлена.")
+            print(texts.UPDATED_SUCCESSFULLY_TEXT)
             return
 
 
