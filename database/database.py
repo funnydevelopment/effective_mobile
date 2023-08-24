@@ -15,13 +15,10 @@ def get_all_data() -> None:
 
 
 def save_data(user_data: dict) -> None:
-    try:
-        data.append(user_data)
-        with open(file_name, "w") as file:
-            json.dump(data, file, indent=4)
-        print(texts.SAVE_DATA_TEXT_2)
-    except Exception:
-        print(texts.SAVE_DATA_TEXT_3)
+    data.append(user_data)
+    with open(file_name, "w") as file:
+        json.dump(data, file, indent=4)
+    print(texts.SAVE_DATA_TEXT_2)
 
 
 def if_user_exist(last_name: str) -> bool:
@@ -41,11 +38,11 @@ def update_data(last_name_to_update: str, updated_fields: dict) -> None:
             return
 
 
-def search_data(search_data: list):
+def search_data(list_to_search: list) -> None:
     found = False
     for entry in data:
         for key, value in entry.items():
-            if any(search.lower() in value.lower() for search in search_data):
+            if any(search.lower() in value.lower() for search in list_to_search):
                 print(json.dumps(entry, indent=4))
                 found = True
     if not found:

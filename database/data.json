@@ -54,5 +54,13 @@
         "organization_name": "Shelby Company Ltd.",
         "work_phone": "89991112244",
         "personal_phone": "89991112277"
+    },
+    {
+        "last_name": "Michael",
+        "first_name": "Bosch",
+        "middle_name": "Fridrich",
+        "organization_name": "Pirelli Ltd.",
+        "work_phone": "81254856611",
+        "personal_phone": "89994517878"
     }
 ]
