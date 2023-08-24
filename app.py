@@ -12,17 +12,15 @@ def main():
             case "1":
                 database.get_all_data()
             case "2":
-                views.save_user_data()
+                views.save_user()
             case "3":
-                views.update_user_data()
+                views.update_user()
             case "4":
-                key_to_search = input("Введите ключ для поиска: ")
-                value_to_search = views.user_full_name()
-                database.search_data(key_to_search, value_to_search)
+                views.search_user()
             case "5":
                 database.get_persons_count()
             case "6":
-                return views.user_goodbye()
+                return views.goodbye_user()
             case _:
                 print(texts.WRONG_INPUT_TEXT)
 

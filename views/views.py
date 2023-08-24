@@ -40,12 +40,12 @@ def user_full_name() -> str:
         raise TypeError
 
 
-def user_goodbye() -> bool:
+def goodbye_user() -> bool:
     print(texts.GOODBYE_TEXT)
     return False
 
 
-def save_user_data():
+def save_user():
     print(texts.SAVE_DATA_TEXT_1)
     print(texts.JSON_DATA_TEXT)
     new_person = dict()
@@ -67,7 +67,8 @@ def save_user_data():
     )
     database.save_data(new_person)
 
-def update_user_data():
+
+def update_user():
     last_name_check = get_valid_input(
         "\nВведите фамилию для обновления: ", user_input_alpha
     )
@@ -91,3 +92,9 @@ def update_user_data():
         database.update_data(last_name_check, updated_fields)
     else:
         print(texts.NO_USER_TEXT)
+
+
+def search_user():
+    key_to_search = input("Введите ключ для поиска: ")
+    value_to_search = user_full_name()
+    database.search_data(key_to_search, value_to_search)
