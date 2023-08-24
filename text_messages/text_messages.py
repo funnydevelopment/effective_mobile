@@ -43,6 +43,8 @@ UPDATED_SUCCESSFULLY_TEXT = "\nЗапись успешно обновлена.\n
 
 NO_USER_TEXT = "\nЗапись с заданным ключом не найдена.\n"
 
+TOTAL_USERS_TEXT = "\nОбщее количество записей в справочнике: {count}\n"
+
 GOODBYE_TEXT = "\nДо скорой встречи!\n"
 
 WRONG_INPUT_TEXT = "\nНеверный выбор.\n"

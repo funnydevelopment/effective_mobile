@@ -49,4 +49,4 @@ def search_data(key: str, value: str):
 
 
 def get_persons_count() -> None:
-    print(f"\nОбщее количество записей в справочнике: {len(data)}\n")
+    print(texts.TOTAL_USERS_TEXT.format(count=len(data)))
